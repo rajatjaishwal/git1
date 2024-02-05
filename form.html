@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>form validation</title>
+    </head>
+    <body>
+        <h1>form validation</h1>
+        <form id="form" onsubmit="v()">
+            <label for="name ">name </label>
+            <input type="text" name="name" id="name" required>
+            <label for ="address">address</label>
+            <input id="address" type="text" name="address">
+            <label for="phone">phone number</label>
+            <input type="number" id="phone" name="phone number">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email">
+            <button type="submit">summit</button>
+        </form>        
+    </body>
+    <script>
+        function v(){
+        const name=document.getElementById("name").value.trim();
+        const address=document.getElementById('address').value.trim();
+        const phone=documnet.getElementById('phone').value.trim();
+        const email=document.getElementById('email').value.trim();
+        if (name==="" || address===""  ){
+            alert("please fill it corretly");
+            return;
+        }
+        if (email===""|| !isvalidemail(email)){
+alert("email is not valid");
+return;
+        }
+        if (!isvalidphone(phone)||phone===""){
+            alert("phone number is not valid")
+            return;
+        }
+
+    }
+    function isvalidemail(email){
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+    }
+    function isvalidphone(phone){
+        const phone= /^\d+(\-d+)*$/;
+        return phone.test(phone);
+    }
+    </script>
+</html>
