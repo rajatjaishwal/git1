@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <h1>add of two number </h1>
+        <button onclick="a()">add</button>
+    </body>
+    <script>
+        function a(){
+            var frist=prompt("enter the first number ");
+            var second=prompt("enter second number");
+            var f=parseInt (frist);
+            var s=parseInt(second);
+            if(!isNaN(f)&&f>=0 &&!isNaN(s)&&s>=0){
+                var a=f+s;
+                alert("sum of two number:"+ a.tofixed(2));
+            }else{alert("invailed number ")}
+        }
+    </script>
+</html>
